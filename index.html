@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>KD_Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+	<!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+	<nav id="navbar">
+		<div class="nav-left">
+			<span class="nav-logo-prefix">~/</span>
+			<a class="nav-logo" href="#hero"><span>KD</span>_Portfolio</a>
+		</div>
+
+		<!-- Desktop nav links — numbers link to matching sections -->
+		<ul class="nav-links">
+			<li><a href="#experience"><span class="bracket">[1]</span> Experience</a></li>
+			<li><a href="#architecture"><span class="bracket">[2]</span> Architecture</a></li>
+			<li><a href="#stacks"><span class="bracket">[3]</span> Stacks</a></li>
+			<li><a href="#contact"><span class="bracket">[4]</span> Contact</a></li>
+		</ul>
+
+		<div class="nav-right">
+			<!--
+        REPLACE "#" with the URL to your hosted resume PDF.
+        Example: href="https://drive.google.com/file/d/YOUR_ID/view"
+      -->
+			<a class="btn-resume" href="#" target="_blank" rel="noopener">MY RESUME/SYS</a>
+
+			<!-- Hamburger for mobile -->
+			<button class="hamburger" id="hamburger" aria-label="Open menu">
+				<span></span><span></span><span></span>
+			</button>
+		</div>
+	</nav>
+
+	<!-- Mobile nav dropdown -->
+	<div class="mobile-nav" id="mobileNav">
+		<a href="#experience" onclick="closeMobileNav()"><span class="bracket gold">[1]</span> Experience</a>
+		<a href="#architecture" onclick="closeMobileNav()"><span class="bracket gold">[2]</span> Architecture</a>
+		<a href="#stacks" onclick="closeMobileNav()"><span class="bracket gold">[3]</span> Stacks</a>
+		<a href="#contact" onclick="closeMobileNav()"><span class="bracket gold">[4]</span> Contact</a>
+		<!--
+      REPLACE "#" with your resume URL
+    -->
+		<a href="#" target="_blank" rel="noopener">MY RESUME/SYS ↗</a>
+	</div>
+
+
+	<!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+	<section id="hero">
+		<p class="hero-import">
+			<span class="keyword">import</span> <span class="module">ML</span>
+			&nbsp;&nbsp;
+			<span class="keyword">import</span> <span class="module">Systems</span>
+		</p>
+
+		<h1 class="hero-name">[Krishna Deshpande]</h1>
+		<p class="hero-subtitle">ML SYSTEMS</p>
+
+		<div class="hero-taglines">
+			<p class="comment">// Working at Cognizant</p>
+			<p class="comment">// Building applications that matter.</p>
+		</div>
+
+		<div class="hero-cta">
+			<!--
+        REPLACE "#" with your GitHub profile URL
+        Example: href="https://github.com/yourusername"
+      -->
+			<a class="btn-primary" href="https://github.com/Krishnadeshpande2907?tab=repositories" target="_blank"
+				rel="noopener">:e #REPOSITORIES</a>
+
+			<!--
+        REPLACE "#" with your LinkedIn / connect page URL
+        Example: href="https://linkedin.com/in/yourusername"
+      -->
+			<a class="btn-secondary" href="https://www.linkedin.com/in/krishna-deshpande-kd/" target="_blank"
+				rel="noopener">:e connect</a>
+		</div>
+
+		<!-- Vim-style status bar at the bottom of the viewport -->
+		<div class="vim-bar">
+			<span>-- INSERT -- "portfolio/KD.go"</span>
+			<span>v1f·8 &nbsp; Go &nbsp; 10,1·8 &nbsp; Bot</span>
+		</div>
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       EXPERIENCE MATRIX
+  ══════════════════════════════════════════ -->
+	<section id="experience" style="max-width:1100px; margin:0 auto; padding: 5rem 2rem;">
+		<h2 class="section-title">Experience Matrix</h2>
+
+		<div class="exp-grid">
+
+			<!-- Cognizant — spans full width on large screens -->
+			<div class="exp-card full">
+				<p class="exp-company">Cognizant</p>
+				<p class="exp-role">
+					Programmer Analyst &nbsp;|&nbsp;
+					<span class="date">May 2023 – Present</span>
+				</p>
+				<div class="exp-desc">
+					<p>Developed and executed automated scripts using Serenity, SWTBot, and FlexTest to ensure the
+						stability and performance of enterprise-level software.</p>
+					<!-- <br/> -->
+					<p>Orchestrated API automation using SoapUI to validate web service integrity and streamline data
+						exchange workflows.</p>
+				</div>
+				<div class="exp-tags">
+					<span class="tag gold">Automation</span>
+					<span class="tag gold">API Testing</span>
+				</div>
+			</div>
+
+			<!-- Tata Steel -->
+			<div class="exp-card">
+				<p class="exp-company">Tata Steel</p>
+				<p class="exp-role">
+					Data Science Internship &nbsp;|&nbsp;
+					<span class="date">November 2022 – October 2022</span>
+				</p>
+				<div class="exp-desc">
+					<ul>
+						<li>Applied regression analysis and data preprocessing while optimizing Sinter plant operations
+							at Tata Steel.</li>
+						<li>Achieved 79% accuracy on testing data for a predictive model aiming to improve efficiency
+							and cost reduction.</li>
+					</ul>
+				</div>
+				<div class="exp-tags">
+					<span class="tag green">Data Science</span>
+					<span class="tag green">ML</span>
+				</div>
+			</div>
+
+			<!-- VIT -->
+			<div class="exp-card">
+				<p class="exp-company">Vellore Institute of Technology</p>
+				<p class="exp-role">
+					B.Tech in Computer Science &nbsp;|&nbsp;
+					<span class="date">2019 – 2023</span>
+				</p>
+				<div class="exp-desc">
+					<ul>
+						<li>Assisted in training computer vision models for object detection tasks.</li>
+					</ul>
+				</div>
+				<div class="exp-tags">
+					<span class="tag blue">Computer Vision</span>
+					<span class="tag blue">Research</span>
+				</div>
+			</div>
+
+		</div><!-- /exp-grid -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span
+				class="vim-pipe blink-pipe">|</span></div>
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       ARCHITECTURE ARCHIVES (PROJECTS)
+  ══════════════════════════════════════════ -->
+	<section id="architecture" style="max-width:1100px; margin:0 auto; padding: 5rem 2rem;">
+		<h2 class="section-title">
+			Architecture Archives
+			<a class="section-right" href="https://github.com/Krishnadeshpande2907?tab=repositories" target="_blank"
+				rel="noopener" class="arch-cmd">
+				<span>:read GITHUB_REGISTRY</span>
+			</a>
+		</h2>
+
+		<div class="arch-grid">
+
+			<!-- MedVault -->
+			<div class="arch-card">
+				<p class="arch-name">MedVault</p>
+				<p class="arch-desc">
+					A patient-first, open source local Android App to keep a record of your medical history.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Kotlin</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/MedVault" target="_blank" rel="noopener" class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+			<!-- clap-to-wake -->
+			<div class="arch-card">
+				<p class="arch-name">clap-to-wake</p>
+				<p class="arch-desc">
+					Lightweight acoustic trigger mechanism leveraging Fourier transforms to detect specific sound
+					patterns for system wake events.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">GO</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/clap-to-wake" target="_blank" rel="noopener"
+						class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+			<!-- Task_Scheduler -->
+			<div class="arch-card">
+				<p class="arch-name">Task_Scheduler</p>
+				<p class="arch-desc">
+					High-throughput cron-alternative utilizing priority queues and worker pools for executing background
+					jobs with minimal overhead.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Core Java</span>
+					<span class="tag green">OOPS</span>
+					<span class="tag green">Multithreading</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/Task_Scheduler" target="_blank" rel="noopener"
+						class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+			<!-- AI-based Football Tracking System -->
+			<div class="arch-card">
+				<p class="arch-name">AI-based-Football-Tracking-System</p>
+				<p class="arch-desc">
+					A system which tracks the ball along with the players and referees on the pitch.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">YOLO</span>
+					<span class="tag green">Python</span>
+					<span class="tag green">OpenCV</span>
+					<span class="tag green">Computer Vision</span>
+					<span class="tag green">Object Detection</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/AI-based-Football-Tracking-System" target="_blank"
+						rel="noopener" class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+		</div><!-- /arch-grid -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span
+				class="vim-pipe blink-pipe">|</span></div>
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       STACKS SECTION  (Certifications + Skills)
+       NOTE: navbar [3] links here — this section
+       covers both Certifications and Skills.
+       Split into two sub-sections if preferred.
+  ══════════════════════════════════════════ -->
+	<section id="stacks" style="max-width:1100px; margin:0 auto; padding: 5rem 2rem;">
+
+		<!-- Certifications -->
+		<h2 class="section-title">Certifications</h2>
+		<div class="cert-grid">
+
+			<a href="https://drive.google.com/file/d/1L-h3Hkr95N3pu9JK_r-nvWh8henVZnXY/view" class="cert-card" target="_blank"
+				rel="noopener">
+				<p class="cert-name">Best Capstone Project Award</p>
+				<p class="cert-issuer">Vellore Institute of Technology 2025</p>
+			</a>
+
+			<a href="https://www.credly.com/badges/5d8f42f8-f4ea-4781-99ec-246b514a2920/public_url" class="cert-card"
+				target="_blank" rel="noopener">
+				<p class="cert-name">AWS Cloud Practitioner</p>
+				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; January 2024</p>
+			</a>
+
+			<a href="https://drive.google.com/file/d/1f_ZSh40isGlR7hATLNqjfW1cQYK6P74g/view" class="cert-card" target="_blank"
+				rel="noopener">
+				<p class="cert-name">Google Cloud Computing</p>
+				<p class="cert-issuer">Google &nbsp;|&nbsp; January 2024</p>
+			</a>
+
+			<!-- <a href="#" class="cert-card" target="_blank" rel="noopener">
+                <p class="cert-name">Prompt Engineering</p>
+                <p class="cert-issuer">Udemy &nbsp;|&nbsp; January 2026</p>
+            </a> -->
+
+		</div><!-- /cert-grid -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span
+				class="vim-pipe blink-pipe">|</span></div>
+
+		<!-- Operational Matrix (Skills) -->
+		<h2 class="section-title" style="margin-top: 3rem;">Operational Matrix</h2>
+		<div class="skills-wrapper">
+
+			<div class="skill-group">
+				<p class="skill-group-label">Languages &amp; Databases</p>
+				<div class="skill-tags">
+					<span class="skill-tag">Java</span>
+					<span class="skill-tag">Python</span>
+					<span class="skill-tag">SQL</span>
+					<span class="skill-tag">HTML</span>
+					<span class="skill-tag">CSS</span>
+					<span class="skill-tag">JavaScript</span>
+					<span class="skill-tag">JSON</span>
+					<span class="skill-tag">MongoDB</span>
+					<span class="skill-tag">Supabase</span>
+				</div>
+			</div>
+
+			<div class="skill-group">
+				<p class="skill-group-label">Technical Skills</p>
+				<div class="skill-tags">
+					<span class="skill-tag">Data Science</span>
+					<span class="skill-tag">Git</span>
+					<span class="skill-tag">GitHub</span>
+					<span class="skill-tag">Arduino IDE</span>
+					<span class="skill-tag">Excel</span>
+					<span class="skill-tag">Postman</span>
+					<span class="skill-tag">Data Structures</span>
+					<span class="skill-tag">Computer Vision</span>
+					<span class="skill-tag">Machine Learning</span>
+					<span class="skill-tag">REST APIs</span>
+					<span class="skill-tag">Jira</span>
+				</div>
+			</div>
+
+			<div class="skill-group">
+				<p class="skill-group-label">Frameworks / Libraries</p>
+				<div class="skill-tags">
+					<span class="skill-tag">Flask</span>
+					<span class="skill-tag">Zustand</span>
+					<span class="skill-tag">Scikit-Learn</span>
+					<span class="skill-tag">YOLO</span>
+					<span class="skill-tag">Ultralytics</span>
+					<span class="skill-tag">Pandas</span>
+					<span class="skill-tag">NumPy</span>
+					<span class="skill-tag">Matplotlib</span>
+				</div>
+			</div>
+
+			<div class="skill-group">
+				<p class="skill-group-label">Automation &amp; Tooling</p>
+				<div class="skill-tags">
+					<span class="skill-tag">Selenium</span>
+					<span class="skill-tag">JUnit</span>
+					<span class="skill-tag">TestNG</span>
+					<span class="skill-tag">Cucumber</span>
+					<span class="skill-tag">Serenity</span>
+					<span class="skill-tag">SWTBot</span>
+					<span class="skill-tag">SoapUI</span>
+					<span class="skill-tag">FlexTest</span>
+					<span class="skill-tag">Apache POI</span>
+				</div>
+			</div>
+
+		</div><!-- /skills-wrapper -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span
+				class="vim-pipe blink-pipe">|</span></div>
+
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       CONTACT / FOOTER
+  ══════════════════════════════════════════ -->
+	<footer id="contact">
+		<p class="contact-comment">/* Reach out. Collaborate. Build things that matter. */</p>
+		<p class="contact-title-code">
+			<span class="comment-sym">/*</span> Initialize Connection <span class="comment-sym">*/</span>
+		</p>
+		<p class="contact-subtitle">
+			Open to opportunities, collaborations, and late-night debugging sessions.
+		</p>
+
+		<div class="social-links">
+
+			<!--
+        REPLACE "#" in each href with the correct URL.
+        GitHub  → https://github.com/yourusername
+        LinkedIn→ https://linkedin.com/in/yourusername
+        Email   → mailto:youremail@example.com
+      -->
+
+			<a class="social-item" href="https://github.com/Krishnadeshpande2907" target="_blank" rel="noopener"
+				aria-label="GitHub">
+				<span class="social-icon">
+					<!-- GitHub SVG icon -->
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+              0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755
+              -1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236
+              1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466
+              -1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176
+              0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405
+              2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23
+              1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22
+              0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295
+              24 12c0-6.63-5.37-12-12-12z" />
+					</svg>
+				</span>
+				<span class="social-label">GitHub</span>
+			</a>
+
+			<a class="social-item" href="https://www.linkedin.com/in/krishnadeshpande2907/" target="_blank" rel="noopener"
+				aria-label="LinkedIn">
+				<span class="social-icon">
+					<!-- LinkedIn SVG icon -->
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path d="M20.447 20.452H17.02v-5.569c0-1.327-.027-3.037-1.852-3.037-1.853
+              0-2.136 1.445-2.136 2.939v5.667H9.604V9h3.29v1.561h.046c.458-.87
+              1.575-1.788 3.243-1.788 3.467 0 4.105 2.281 4.105 5.248v6.431zM5.337
+              7.433a1.91 1.91 0 110-3.82 1.91 1.91 0 010 3.82zm1.646 13.019H3.69V9
+              h3.293v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792
+              24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0
+              22.222 0h.003z" />
+					</svg>
+				</span>
+				<span class="social-label">LinkedIn</span>
+			</a>
+
+			<a class="social-item" href="mailto:kd721921@gmail.com" aria-label="Email">
+				<span class="social-icon">
+					<!-- Email SVG icon -->
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+						<rect x="2" y="4" width="20" height="16" rx="2" />
+						<path d="M2 7l10 7 10-7" />
+					</svg>
+				</span>
+				<span class="social-label">Email</span>
+			</a>
+
+		</div><!-- /social-links -->
+
+		<p class="footer-copy">
+			&copy; 2025 Krishna Deshpande &nbsp;·&nbsp; Built with vanilla HTML/CSS
+		</p>
+	</footer>
+
+
+	<!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
+	<script>
+		// ── Mobile hamburger toggle ──────────────────
+		const hamburger = document.getElementById('hamburger');
+		const mobileNav = document.getElementById('mobileNav');
+
+		hamburger.addEventListener('click', () => {
+			mobileNav.classList.toggle('open');
+		});
+
+		function closeMobileNav() {
+			mobileNav.classList.remove('open');
+		}
+
+		// Close mobile nav when clicking outside
+		document.addEventListener('click', (e) => {
+			if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+				mobileNav.classList.remove('open');
+			}
+		});
+
+		// ── Active nav link highlight on scroll ──────
+		const sections = document.querySelectorAll('section[id], footer[id]');
+		const navAs = document.querySelectorAll('.nav-links a');
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					navAs.forEach(a => a.style.color = '');
+					const id = entry.target.id;
+					const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+					if (link) link.style.color = 'var(--gold)';
+				}
+			});
+		}, { threshold: 0.3 });
+
+		sections.forEach(s => observer.observe(s));
+
+		// ── Typing cursor in hero already via CSS ::after ──
+	</script>
+</body>
+
+</html>
