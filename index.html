@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Krishna Deshpande · KD_Portfolio</title>
+	<meta name="description"
+		content="Portfolio of Krishna Deshpande — Programmer Analyst at Cognizant. DevOps, AWS, Go and test automation projects." />
+
+	<!-- Social sharing preview -->
+	<meta property="og:title" content="Krishna Deshpande · KD_Portfolio" />
+	<meta property="og:description" content="DevOps · AWS · Go · Automation — projects, experience and certifications." />
+	<meta property="og:type" content="website" />
+
+	<!-- Terminal-style favicon (inline SVG, no extra file needed) -->
+	<link rel="icon"
+		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0d0d'/%3E%3Ctext x='10' y='44' font-family='monospace' font-size='30' font-weight='bold' fill='%23f0c040'%3E%26gt;_%3C/text%3E%3C/svg%3E" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" />
+
+	<!--
+	  Applies the saved (or system-preferred) theme BEFORE first paint,
+	  so there is no dark→light flash on reload. Keep this tiny script here.
+	-->
+	<script>
+		(function () {
+			let theme = 'dark';
+			try {
+				theme = localStorage.getItem('kd-theme') ||
+					(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+			} catch (e) { /* storage unavailable — default to dark */ }
+			document.documentElement.setAttribute('data-theme', theme);
+		})();
+	</script>
+</head>
+
+<body>
+
+	<!-- Matrix mouse-trail canvas (drawn behind nothing, above background).
+	     Purely decorative — toggle with the fx switch in the hero vim bar. -->
+	<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+	<!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+	<nav id="navbar">
+		<div class="nav-inner">
+			<div class="nav-left">
+				<span class="nav-logo-prefix">~/</span>
+				<a class="nav-logo" href="#hero"><span>KD</span>_Portfolio</a>
+			</div>
+
+			<!-- Desktop nav links — numbers link to matching sections -->
+			<ul class="nav-links">
+				<li><a href="#experience"><span class="bracket">[1]</span> Experience</a></li>
+				<li><a href="#architecture"><span class="bracket">[2]</span> Architecture</a></li>
+				<li><a href="#stacks"><span class="bracket">[3]</span> Stacks</a></li>
+				<li><a href="#contact"><span class="bracket">[4]</span> Contact</a></li>
+			</ul>
+
+			<div class="nav-right">
+				<!--
+				  Vim-style theme toggle. JS swaps the label between
+				  :set bg=light  and  :set bg=dark
+				-->
+				<button class="theme-toggle" id="themeToggle" aria-label="Switch color theme">:set bg=light</button>
+
+				<!--
+				  RESUME LINK — points at resume.pdf in the repo root.
+				  Upload your resume to this repo as  resume.pdf  and the button just
+				  works (any other URL is fine too). Same link again in the mobile menu.
+				-->
+				<a class="btn-resume" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+
+				<!-- Hamburger for mobile -->
+				<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+					<span></span><span></span><span></span>
+				</button>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Mobile nav dropdown -->
+	<div class="mobile-nav" id="mobileNav">
+		<a href="#experience"><span class="bracket gold">[1]</span> Experience</a>
+		<a href="#architecture"><span class="bracket gold">[2]</span> Architecture</a>
+		<a href="#stacks"><span class="bracket gold">[3]</span> Stacks</a>
+		<a href="#contact"><span class="bracket gold">[4]</span> Contact</a>
+		<!-- Same resume link as above — keep both in sync -->
+		<a href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+	</div>
+
+
+	<!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+	<section id="hero">
+		<div class="hero-inner">
+			<p class="hero-import">
+				<span class="keyword">import</span> <span class="module">DevOps</span>
+				&nbsp;&nbsp;
+				<span class="keyword">import</span> <span class="module">AWS</span>
+			</p>
+
+			<h2 class="hero-name">[Krishna&nbsp;Deshpande]</h2>
+			<p class="hero-subtitle">DEVOPS &amp; AWS</p>
+
+			<!-- Typed out on load by script.js (shown instantly if reduced motion is on) -->
+			<div class="hero-taglines" id="heroTaglines">
+				<p class="comment" data-type-text="// Programmer Analyst @ Cognizant"></p>
+				<p class="comment" data-type-text="// Building applications that matter."></p>
+			</div>
+
+			<div class="hero-cta">
+				<a class="btn-primary" href="https://github.com/Krishnadeshpande2907?tab=repositories" target="_blank"
+					rel="noopener">:e #REPOSITORIES</a>
+				<a class="btn-secondary" href="https://www.linkedin.com/in/krishna-deshpande-kd/" target="_blank"
+					rel="noopener">:e connect</a>
+			</div>
+		</div>
+
+		<!-- Vim-style status bar at the bottom of the viewport -->
+		<div class="vim-bar">
+			<span class="vim-left">-- INSERT -- "portfolio/KD.go"</span>
+			<span class="vim-right">
+				<!-- Toggles the matrix mouse trail on / off -->
+				<button class="fx-toggle" id="fxToggle" aria-label="Toggle matrix mouse trail">fx=on</button>
+				<span class="vim-sep">|</span> go <span class="vim-sep">|</span> utf-8 <span class="vim-sep">|</span> 100%
+			</span>
+		</div>
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       EXPERIENCE MATRIX
+  ══════════════════════════════════════════ -->
+	<section id="experience">
+		<h2 class="section-title">Experience Matrix</h2>
+
+		<div class="exp-grid">
+
+			<!-- Cognizant — spans full width on large screens.
+			 Three roles stacked newest-first; every role after the first uses
+			 class="exp-role exp-role-second" to get the dashed divider. -->
+			<div class="exp-card full">
+				<p class="exp-company">Cognizant</p>
+
+				<p class="exp-role">
+					Programmer Analyst &nbsp;|&nbsp;
+					<span class="date">Sep 2026 – Present</span> &nbsp;·&nbsp; Pune
+				</p>
+				<div class="exp-desc">
+					<ul>
+						<li>Quality engineering for telecom service provisioning: the systems customers use to
+							discover, buy and activate data and broadband plans — keeping those services
+							reliable, affordable and easy to orchestrate.</li>
+						<li>Continuing the QEA work below after conversion from the trainee program, with
+							expanded ownership of regression coverage and release quality.</li>
+					</ul>
+				</div>
+
+				<p class="exp-role exp-role-second">
+					Programmer Analyst Trainee &nbsp;|&nbsp;
+					<span class="date">Sep 2025 – Aug 2026</span> &nbsp;·&nbsp; Pune
+				</p>
+				<div class="exp-desc">
+					<ul>
+						<li>Integrated REST &amp; SOAP API regression test suites directly into Jenkins for
+							continuous, automated execution.</li>
+						<li>Validated end-to-end data pipelines for provisioning across physical and virtual
+							broadband infrastructure.</li>
+						<li>Engineered test environments at both light and full scale (3M+ records) to mirror
+							production data conditions.</li>
+						<li>Deployed and monitored containerized microservices with Docker to isolate
+							environment-specific defects.</li>
+						<li>Executed complex API workflows spanning REST and SOAP using SoapUI and Postman.</li>
+						<li>Built and maintained automated regression suites with Selenium, TestNG and Cucumber,
+							managing defects and test cycles through Jira in an Agile delivery setup.</li>
+					</ul>
+				</div>
+
+				<p class="exp-role exp-role-second">
+					Intern (QEA) &nbsp;|&nbsp;
+					<span class="date">Apr 2025 – Aug 2025</span> &nbsp;·&nbsp; Chennai
+				</p>
+				<div class="exp-desc">
+					<ul>
+						<li>Completed intensive QEA training — Java-based test frameworks, Serenity BDD, SWTBot,
+							FlexTest, and API automation fundamentals.</li>
+					</ul>
+				</div>
+
+				<div class="exp-tags">
+					<span class="tag gold">Automation</span>
+					<span class="tag gold">API Testing</span>
+					<span class="tag gold">Jenkins</span>
+					<span class="tag gold">Docker</span>
+				</div>
+			</div>
+
+			<!-- Tata Steel -->
+			<div class="exp-card">
+				<p class="exp-company">Tata Steel</p>
+				<p class="exp-role">
+					Data Science Intern &nbsp;|&nbsp;
+					<span class="date">Sep 2023 – Oct 2023</span>
+				</p>
+				<div class="exp-desc">
+					<ul>
+						<li>Conducted regression analysis on a month of Sinter plant operations data, with heavy data
+							preprocessing and feature engineering.</li>
+						<li>Reached 79% accuracy on test data for a predictive model targeting plant efficiency and
+							cost reduction.</li>
+					</ul>
+				</div>
+				<div class="exp-tags">
+					<span class="tag green">Data Science</span>
+					<span class="tag green">ML</span>
+				</div>
+			</div>
+
+			<!-- VIT -->
+			<div class="exp-card">
+				<p class="exp-company">Vellore Institute of Technology</p>
+				<p class="exp-role">
+					B.Tech in Computer Science &nbsp;|&nbsp;
+					<span class="date">2021 – 2025</span>
+				</p>
+				<div class="exp-desc">
+					<ul>
+						<li>Best Capstone Project Award (2025) for the AI-based Football Tracking System.</li>
+						<li>Trained computer vision models for object detection and tracking tasks.</li>
+					</ul>
+				</div>
+				<div class="exp-tags">
+					<span class="tag blue">Computer Vision</span>
+					<span class="tag blue">Research</span>
+				</div>
+			</div>
+
+		</div><!-- /exp-grid -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span
+				class="vim-pipe blink-pipe">|</span></div>
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       ARCHITECTURE ARCHIVES (PROJECTS)
+  ══════════════════════════════════════════ -->
+	<section id="architecture">
+		<h2 class="section-title">
+			Architecture Archives
+			<a class="section-right arch-cmd" href="https://github.com/Krishnadeshpande2907?tab=repositories"
+				target="_blank" rel="noopener">
+				<span>:read GITHUB_REGISTRY</span>
+			</a>
+		</h2>
+
+		<div class="arch-grid">
+
+			<!-- AI-based Football Tracking System -->
+			<div class="arch-card">
+				<p class="arch-name">AI-Football-Tracking</p>
+				<p class="arch-desc">
+					Tracks players, referees and the ball with a custom-trained detection model and ByteTrack, then
+					maps everything onto a 2D pitch using keypoint detection and planar homography for tactical
+					analysis. Won VIT's Best Capstone Project Award.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Python</span>
+					<span class="tag green">YOLO</span>
+					<span class="tag green">ByteTrack</span>
+					<span class="tag green">OpenCV</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/AI-based-Football-Tracking-System" target="_blank"
+						rel="noopener" class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+			<!-- clap-to-wake -->
+			<div class="arch-card">
+				<p class="arch-name">clap-to-wake</p>
+				<p class="arch-desc">
+					Lightweight acoustic trigger written in Go — uses Fourier transforms to detect clap patterns and
+					wake the system, so your PC stops sleeping without your approval.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Go</span>
+					<span class="tag green">DSP</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/clap-to-wake" target="_blank" rel="noopener"
+						class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+			<!-- Handwriting Recognition — rebuilt in Go (originally Java).
+				 TODO(Krishna): send the Go repo link and swap the href below —
+				 it currently points at the GitHub repositories list. -->
+			<div class="arch-card">
+				<p class="arch-name">Handwriting-Recognition</p>
+				<p class="arch-desc">
+					Converts images of handwritten text into machine-readable text — originally prototyped in
+					Java, now rewritten from the ground up in Go.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Go</span>
+					<span class="tag green">OCR</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907?tab=repositories" target="_blank"
+						rel="noopener" class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+			<!-- Adaptive Cruise Control -->
+			<div class="arch-card">
+				<p class="arch-name">Adaptive-Cruise-Control</p>
+				<p class="arch-desc">
+					Arduino-powered car that autonomously adjusts speed based on the proximity and movement of nearby
+					obstacles — safer, smoother driving in hardware.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Arduino</span>
+					<span class="tag green">Embedded</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://www.linkedin.com/in/krishna-deshpande-kd/" target="_blank" rel="noopener"
+						class="arch-cmd">
+						<span class="prompt">$ </span>man docs/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
+			<!-- Placeholder: DevOps projects coming soon.
+			     Duplicate an .arch-card above and delete this one when the first
+			     DevOps project is ready. -->
+			<div class="arch-card arch-card-placeholder">
+				<p class="arch-name">devops-lab</p>
+				<p class="arch-desc">
+					<span class="prompt">$ </span>git init devops-projects<br />
+					<span class="dim">// provisioning… new builds land here soon</span><span class="blink-pipe">▌</span>
+				</p>
+				<div class="exp-tags">
+					<span class="tag">Docker</span>
+					<span class="tag">CI/CD</span>
+				</div>
+			</div>
+
+		</div><!-- /arch-grid -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span
+				class="vim-pipe blink-pipe">|</span></div>
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       STACKS SECTION  (Skills + Certifications)
+  ══════════════════════════════════════════ -->
+	<section id="stacks">
+
+		<!-- Operational Matrix (Skills) — listed first, per the 22 Aug review -->
+		<h2 class="section-title">Operational Matrix</h2>
+		<div class="skills-wrapper">
+
+			<div class="skill-group">
+				<p class="skill-group-label">Languages &amp; Databases</p>
+				<div class="skill-tags">
+					<span class="skill-tag">Go</span>
+					<span class="skill-tag">Java</span>
+					<span class="skill-tag">Python</span>
+					<span class="skill-tag">SQL</span>
+					<span class="skill-tag">HTML</span>
+					<span class="skill-tag">CSS</span>
+					<span class="skill-tag">JavaScript</span>
+					<span class="skill-tag">JSON</span>
+					<span class="skill-tag">MongoDB</span>
+					<span class="skill-tag">Supabase</span>
+				</div>
+			</div>
+
+			<div class="skill-group">
+				<p class="skill-group-label">Technical Skills</p>
+				<div class="skill-tags">
+					<span class="skill-tag">AWS</span>
+					<span class="skill-tag">Data Science</span>
+					<span class="skill-tag">Git</span>
+					<span class="skill-tag">GitHub</span>
+					<span class="skill-tag">Arduino IDE</span>
+					<span class="skill-tag">Excel</span>
+					<span class="skill-tag">Postman</span>
+					<span class="skill-tag">Data Structures</span>
+					<span class="skill-tag">Computer Vision</span>
+					<span class="skill-tag">Machine Learning</span>
+					<span class="skill-tag">REST &amp; SOAP APIs</span>
+					<span class="skill-tag">Jira</span>
+				</div>
+			</div>
+
+			<div class="skill-group">
+				<p class="skill-group-label">Frameworks / Libraries</p>
+				<div class="skill-tags">
+					<span class="skill-tag">Flask</span>
+					<span class="skill-tag">Zustand</span>
+					<span class="skill-tag">Scikit-Learn</span>
+					<span class="skill-tag">YOLO</span>
+					<span class="skill-tag">Ultralytics</span>
+					<span class="skill-tag">Pandas</span>
+					<span class="skill-tag">NumPy</span>
+					<span class="skill-tag">Matplotlib</span>
+				</div>
+			</div>
+
+			<div class="skill-group">
+				<p class="skill-group-label">Automation &amp; Tooling</p>
+				<div class="skill-tags">
+					<span class="skill-tag">Jenkins</span>
+					<span class="skill-tag">Docker</span>
+					<span class="skill-tag">Selenium</span>
+					<span class="skill-tag">JUnit</span>
+					<span class="skill-tag">TestNG</span>
+					<span class="skill-tag">Cucumber</span>
+					<span class="skill-tag">Serenity</span>
+					<span class="skill-tag">SWTBot</span>
+					<span class="skill-tag">SoapUI</span>
+					<span class="skill-tag">FlexTest</span>
+					<span class="skill-tag">Apache POI</span>
+				</div>
+			</div>
+
+		</div><!-- /skills-wrapper -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span class="vim-pipe blink-pipe">|</span></div>
+
+		<!-- Certifications — moved below the Operational Matrix, per the 22 Aug review.
+			 Proof links: external badges (Credly) link directly. The old Google Drive
+			 proofs were wiped, so those cards now point at files in this repo's
+			 certs/  folder — upload each certificate image with the exact filename
+			 used in its href (or edit the href to match your file). -->
+		<h2 class="section-title stacks-subtitle">Certifications</h2>
+		<div class="cert-grid">
+
+			<a href="certs/best-capstone-award.jpg" class="cert-card" target="_blank" rel="noopener">
+				<p class="cert-name">Best Capstone Project Award</p>
+				<p class="cert-issuer">Vellore Institute of Technology &nbsp;|&nbsp; 2025</p>
+			</a>
+
+			<a href="https://www.credly.com/badges/5d8f42f8-f4ea-4781-99ec-246b514a2920/public_url" class="cert-card"
+				target="_blank" rel="noopener">
+				<p class="cert-name">AWS Cloud Practitioner</p>
+				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; Jan 2024</p>
+			</a>
+
+			<a href="certs/google-cloud-foundations.jpg" class="cert-card" target="_blank" rel="noopener">
+				<p class="cert-name">Google Cloud Computing Foundations</p>
+				<p class="cert-issuer">Google &nbsp;|&nbsp; Jan 2024</p>
+			</a>
+
+			<!-- Upcoming — next AWS certification exam is scheduled for early Sep 2026.
+				 Once passed: fill in the exact certification name, swap this div for an
+				 <a class="cert-card" href="…Credly badge…">, and drop cert-card-pending. -->
+			<div class="cert-card cert-card-pending">
+				<p class="cert-name">AWS Certification <span class="dim">// in progress</span></p>
+				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; exam · Sep 2026</p>
+			</div>
+
+		</div><!-- /cert-grid -->
+		<div class="section-cursor-bar"><span class="vim-pipe">~</span> &nbsp;: &nbsp;<span class="vim-pipe blink-pipe">|</span></div>
+
+	</section>
+
+
+	<!-- ══════════════════════════════════════════
+       CONTACT / FOOTER
+  ══════════════════════════════════════════ -->
+	<footer id="contact">
+		<p class="contact-comment">/* Reach out. Collaborate. Build things that matter. */</p>
+		<p class="contact-title-code">
+			<span class="comment-sym">/*</span> Initialize Connection <span class="comment-sym">*/</span>
+		</p>
+		<p class="contact-subtitle">
+			Open to opportunities, collaborations, and late-night debugging sessions.
+		</p>
+
+		<div class="social-links">
+
+			<a class="social-item" href="https://github.com/Krishnadeshpande2907" target="_blank" rel="noopener"
+				aria-label="GitHub">
+				<span class="social-icon">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+              0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755
+              -1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236
+              1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466
+              -1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176
+              0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405
+              2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23
+              1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22
+              0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295
+              24 12c0-6.63-5.37-12-12-12z" />
+					</svg>
+				</span>
+				<span class="social-label">GitHub</span>
+			</a>
+
+			<a class="social-item" href="https://www.linkedin.com/in/krishna-deshpande-kd/" target="_blank"
+				rel="noopener" aria-label="LinkedIn">
+				<span class="social-icon">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M20.447 20.452H17.02v-5.569c0-1.327-.027-3.037-1.852-3.037-1.853
+              0-2.136 1.445-2.136 2.939v5.667H9.604V9h3.29v1.561h.046c.458-.87
+              1.575-1.788 3.243-1.788 3.467 0 4.105 2.281 4.105 5.248v6.431zM5.337
+              7.433a1.91 1.91 0 110-3.82 1.91 1.91 0 010 3.82zm1.646 13.019H3.69V9
+              h3.293v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792
+              24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0
+              22.222 0h.003z" />
+					</svg>
+				</span>
+				<span class="social-label">LinkedIn</span>
+			</a>
+
+			<a class="social-item" href="mailto:kd721921@gmail.com" aria-label="Email">
+				<span class="social-icon">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+						<rect x="2" y="4" width="20" height="16" rx="2" />
+						<path d="M2 7l10 7 10-7" />
+					</svg>
+				</span>
+				<span class="social-label">Email</span>
+			</a>
+
+		</div><!-- /social-links -->
+
+		<p class="footer-copy">
+			&copy; <span id="year">2026</span> Krishna Deshpande &nbsp;·&nbsp; Built with vanilla HTML/CSS/JS
+		</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
