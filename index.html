@@ -13,6 +13,9 @@
 	<meta property="og:description" content="DevOps · AWS · Go · Automation — projects, experience and certifications." />
 	<meta property="og:type" content="website" />
 
+	<!-- Colors the mobile browser chrome (address bar) — JS keeps it in sync with the theme -->
+	<meta name="theme-color" id="metaThemeColor" content="#0d0d0d" />
+
 	<!-- Terminal-style favicon (inline SVG, no extra file needed) -->
 	<link rel="icon"
 		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0d0d'/%3E%3Ctext x='10' y='44' font-family='monospace' font-size='30' font-weight='bold' fill='%23f0c040'%3E%26gt;_%3C/text%3E%3C/svg%3E" />
@@ -36,6 +39,8 @@
 					(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 			} catch (e) { /* storage unavailable — default to dark */ }
 			document.documentElement.setAttribute('data-theme', theme);
+			var m = document.getElementById('metaThemeColor');
+			if (m) { m.setAttribute('content', theme === 'light' ? '#f3edd9' : '#0d0d0d'); }
 		})();
 	</script>
 </head>
@@ -108,7 +113,8 @@
 				<span class="keyword">import</span> <span class="module">AWS</span>
 			</p>
 
-			<h2 class="hero-name">[Krishna&nbsp;Deshpande]</h2>
+			<!-- Plain space (not &nbsp;) so the name can wrap to two lines on phones -->
+			<h2 class="hero-name">[Krishna Deshpande]</h2>
 			<p class="hero-subtitle">DEVOPS &amp; AWS</p>
 
 			<!-- Typed out on load by script.js (shown instantly if reduced motion is on) -->
@@ -286,6 +292,26 @@
 				</div>
 			</div>
 
+			<!-- TaskScheduler_TUI — the Go rewrite of the old Java Task_Scheduler -->
+			<div class="arch-card">
+				<p class="arch-name">TaskScheduler_TUI</p>
+				<p class="arch-desc">
+					Task scheduling without leaving the terminal — a Bubble Tea TUI built in Go, replacing
+					the original Java command-line version.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Go</span>
+					<span class="tag green">Bubble Tea</span>
+					<span class="tag green">TUI</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/TaskScheduler_TUI" target="_blank"
+						rel="noopener" class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+
 			<!-- clap-to-wake -->
 			<div class="arch-card">
 				<p class="arch-name">clap-to-wake</p>
@@ -453,19 +479,23 @@
 
 			<a href="certs/best-capstone-award.jpg" class="cert-card" target="_blank" rel="noopener">
 				<p class="cert-name">Best Capstone Project Award</p>
-				<p class="cert-issuer">Vellore Institute of Technology &nbsp;|&nbsp; 2025</p>
+				<p class="cert-issuer">Vellore Institute of Technology &nbsp;|&nbsp; Apr 2025</p>
 			</a>
 
 			<a href="https://www.credly.com/badges/5d8f42f8-f4ea-4781-99ec-246b514a2920/public_url" class="cert-card"
 				target="_blank" rel="noopener">
 				<p class="cert-name">AWS Cloud Practitioner</p>
-				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; Jan 2024</p>
+				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; Jun 2024</p>
 			</a>
 
-			<a href="certs/google-cloud-foundations.jpg" class="cert-card" target="_blank" rel="noopener">
+			<!-- TODO(Krishna): certificate image still missing. Send it, save it as
+				 certs/google-cloud-foundations.jpg, then turn this back into
+				 <a href="certs/google-cloud-foundations.jpg" class="cert-card" target="_blank" rel="noopener">
+				 so the card opens the proof. Kept unlinked for now to avoid a 404. -->
+			<div class="cert-card">
 				<p class="cert-name">Google Cloud Computing Foundations</p>
 				<p class="cert-issuer">Google &nbsp;|&nbsp; Jan 2024</p>
-			</a>
+			</div>
 
 			<!-- Upcoming — next AWS certification exam is scheduled for early Sep 2026.
 				 Once passed: fill in the exact certification name, swap this div for an
