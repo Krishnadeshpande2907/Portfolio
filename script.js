@@ -31,6 +31,9 @@
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    /* Keep the mobile browser chrome (address bar) matching the theme */
+    var metaTheme = document.getElementById('metaThemeColor');
+    if (metaTheme) { metaTheme.setAttribute('content', theme === 'light' ? '#f3edd9' : '#0d0d0d'); }
     /* The button shows the command you would run to switch AWAY from now */
     themeToggle.textContent = theme === 'dark' ? ':set bg=light' : ':set bg=dark';
     storeSet('kd-theme', theme);
