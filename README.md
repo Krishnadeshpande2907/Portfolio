@@ -1,6 +1,6 @@
-# KD_Portfolio
+# My_Portfolio
 
-Personal portfolio of **Krishna Deshpande** — a terminal / vim-themed static site built with vanilla HTML, CSS and JavaScript. No frameworks, no build step: edit the files, push, done.
+My personal portfolio — a terminal / vim-themed static site built with vanilla HTML, CSS and JavaScript. No frameworks, no build step: edit the files, push, done.
 
 **Live site:** hosted on GitHub Pages with a custom domain.
 
