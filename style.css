@@ -341,7 +341,7 @@ button {
 
 /* Keeps hero content from spreading too wide on big screens */
 .hero-inner {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
