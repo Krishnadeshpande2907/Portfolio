@@ -81,7 +81,7 @@
 				  Upload your resume to this repo as  resume.pdf  and the button just
 				  works (any other URL is fine too). Same link again in the mobile menu.
 				-->
-				<a class="btn-resume" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+				<a class="btn-resume" href="certs/resume.pdf" target="_blank" rel="noopener">Resume</a>
 
 				<!-- Hamburger for mobile -->
 				<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -98,7 +98,7 @@
 		<a href="#stacks"><span class="bracket gold">[3]</span> Stacks</a>
 		<a href="#contact"><span class="bracket gold">[4]</span> Contact</a>
 		<!-- Same resume link as above — keep both in sync -->
-		<a href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+		<a href="certs/resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
 	</div>
 
 
@@ -270,6 +270,25 @@
 
 		<div class="arch-grid">
 
+			<!-- CineBucket — Ephemeral Movie Distribution -->
+			<div class="arch-card">
+				<p class="arch-name">CineBucket</p>
+				<p class="arch-desc">
+					An ephemeral movie distribution platform built with Go, AWS and Terraform — users can download a movie for a limited time, after which the download link expires and the movie is deleted from the S3 bucket.
+				</p>
+				<div class="exp-tags">
+					<span class="tag green">Go</span>
+					<span class="tag green">AWS</span>
+					<span class="tag green">Terraform</span>
+				</div>
+				<div class="arch-footer">
+					<a href="https://github.com/Krishnadeshpande2907/CineBucket" target="_blank"
+						rel="noopener" class="arch-cmd">
+						<span class="prompt">$ </span>cat src/&nbsp;↗
+					</a>
+				</div>
+			</div>
+			
 			<!-- TaskScheduler_TUI — the Go rewrite of the old Java Task_Scheduler -->
 			<div class="arch-card">
 				<p class="arch-name">TaskScheduler_TUI</p>
@@ -375,15 +394,15 @@
 			     Duplicate an .arch-card above and delete this one when the first
 			     DevOps project is ready. -->
 			<div class="arch-card arch-card-placeholder">
-				<p class="arch-name">devops-lab</p>
+				<p class="arch-name">Next Project</p>
 				<p class="arch-desc">
-					<span class="prompt">$ </span>git init devops-projects<br />
-					<span class="dim">// provisioning… new builds land here soon</span><span class="blink-pipe">▌</span>
+					<span class="prompt">$ </span>git init projects<br />
+					<span class="dim">// provisioning… new builds, landing here soon</span><span class="blink-pipe">▌</span>
 				</p>
-				<div class="exp-tags">
+				<!-- <div class="exp-tags">
 					<span class="tag">Docker</span>
 					<span class="tag">CI/CD</span>
-				</div>
+				</div> -->
 			</div>
 
 		</div><!-- /arch-grid -->
@@ -488,21 +507,17 @@
 				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; Jun 2024</p>
 			</a>
 
-			<!-- TODO(Krishna): certificate image still missing. Send it, save it as
-				 certs/google-cloud-foundations.jpg, then turn this back into -->
-			<a href="certs/google-cloud-foundations.jpg" class="cert-card" target="_blank" rel="noopener">
-				<!-- so the card opens the proof. Kept unlinked for now to avoid a 404. -->
-			<div class="cert-card">
+			<a href="certs/google-cloud-foundations.pdf" class="cert-card" target="_blank" rel="noopener">
 				<p class="cert-name">Google Cloud Computing Foundations</p>
 				<p class="cert-issuer">Google &nbsp;|&nbsp; Jan 2024</p>
-			</div>
+			</a>
 
 			<!-- Upcoming — next AWS certification exam is scheduled for early Sep 2026.
 				 Once passed: fill in the exact certification name, swap this div for an
 				 <a class="cert-card" href="…Credly badge…">, and drop cert-card-pending. -->
 			<div class="cert-card cert-card-pending">
 				<p class="cert-name">AWS Certification <span class="dim">// in progress</span></p>
-				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; exam · Sep 2026</p>
+				<p class="cert-issuer">Amazon Web Services &nbsp;|&nbsp; exam · Oct 2026</p>
 			</div>
 
 		</div><!-- /cert-grid -->
